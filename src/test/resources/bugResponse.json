@@ -1,0 +1,136 @@
+{
+  "bug": {
+    "id": 20,
+    "title": "Summary of the bug",
+    "severity": "high",
+    "status": "accepted",
+    "language": "en",
+    "app_section": {
+      "id": 61,
+      "title": "Landing Page",
+      "description": "You are on the landing page. It often shows a slideshow at the center, but also tiles related to current offers or themes.\r\nThe site should be displayed in the same way among all common browsers.\r\nCustomer references / reviews are often present towards the bottom of the page.\r\n",
+      "location": "The landing page of the given testing environment"
+    },
+    "feature": {
+      "id": 61,
+      "title": "Landing Page",
+      "description": "You are on the landing page. It often shows a slideshow at the center, but also tiles related to current offers or themes.\r\nThe site should be displayed in the same way among all common browsers.\r\nCustomer references / reviews are often present towards the bottom of the page.\r\n",
+      "location": "The landing page of the given testing environment",
+      "howtofind": "The landing page of the given testing environment",
+      "target_idx": "unknown"
+    },
+    "test_feature": {
+      "id": 61,
+      "title": "Landing Page",
+      "description": "You are on the landing page. It often shows a slideshow at the center, but also tiles related to current offers or themes.\r\nThe site should be displayed in the same way among all common browsers.\r\nCustomer references / reviews are often present towards the bottom of the page.\r\n",
+      "location": "The landing page of the given testing environment",
+      "howtofind": "The landing page of the given testing environment",
+      "target_idx": "unknown"
+    },
+    "location": "test_url3.com",
+    "expected_result": "Expected result",
+    "actual_result": "Actual result",
+    "author": {
+      "name": "teamleader1"
+    },
+    "comments": [
+      {
+        "id": 123,
+        "body": "comment message",
+        "author": {
+          "name": "toto"
+        },
+        "created_at": "2022-05-09T11:22:55.000+02:00"
+      }
+    ],
+    "devices": [
+      {
+        "id": 43,
+        "category": {
+          "name": "Smartphones"
+        },
+        "vendor": {
+          "name": "Google"
+        },
+        "operating_system": {
+          "name": "Android"
+        },
+        "operating_system_version": {
+          "name": "10"
+        },
+        "device": {
+          "name": "Nexus 5"
+        },
+        "browsers": [
+          {
+            "name": "Chrome"
+          }
+        ]
+      }
+    ],
+    "reproductions": [],
+    "exported_at": "2022-05-09T11:22:55.000+02:00",
+    "external_idx": "abcdefg",
+    "known": false,
+    "product": {
+      "id": 10,
+      "name": "Product #2",
+      "sections": [
+        {
+          "id": 13,
+          "name": "Section #1"
+        },
+        {
+          "id": 14,
+          "name": "Section #2"
+        },
+        {
+          "id": 15,
+          "name": "Section #3"
+        }
+      ]
+    },
+    "section": {
+      "id": 14,
+      "name": "Section #2"
+    },
+    "attachments": [
+      {
+        "id": 51,
+        "url": "https://example.com/uploads/bug_attachment/file/51/6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg",
+        "thumbnail_urls": {
+          "50x50": "https://example.com/uploads/bug_attachment/file/51/thumb_6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg",
+          "150x150": "https://example.com/uploads/bug_attachment/file/51/inline_6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg",
+          "200x200": "https://example.com/uploads/bug_attachment/file/51/preview_6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg",
+          "x250": "https://example.com/uploads/bug_attachment/file/51/carousel_6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg",
+          "50x36": "https://example.com/uploads/bug_attachment/file/51/upload_bar_6d96f62c-1efd-47a6-a04b-a60ab5426cdb.jpg"
+        }
+      }
+    ],
+    "steps": [
+      "Go to Url"
+    ],
+    "test": {
+      "id": 37,
+      "title": "Product with sections"
+    },
+    "test_case": null,
+    "test_environment": {
+      "id": 9,
+      "title": "new",
+      "url": "http://test.com",
+      "username": "user",
+      "password": "password",
+      "access": "",
+      "proxy": false,
+      "allow_orders": false,
+      "access_type": "url",
+      "binary_app": {
+        "id": 45,
+        "filename": "f.txt",
+        "file_size": 123
+      }
+    },
+    "reported_at": "2022-05-18T10:36:43.000+02:00"
+  }
+}
