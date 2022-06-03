@@ -1,0 +1,82 @@
+{
+  "test_case_test": {
+    "test_title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "goal": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "out_of_scope": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "instructions": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "start_at": "2022-05-09T11:22:55.000+02:00",
+    "end_at": "2022-05-09T11:22:56+02:00",
+    "report_language": "en",
+    "test_case_requirements": [
+      {
+        "id": 0,
+        "test_case_environment_id": 1,
+        "requirement": {
+          "category": {
+            "id": 0,
+            "name": "Smartphones"
+          },
+          "vendor": {
+            "id": 0,
+            "name": "Google"
+          },
+          "devices": [
+            {
+              "browsers": []
+            },
+            {
+              "id": 0,
+              "name": "Nexus 5",
+              "browsers": []
+            }
+          ],
+          "operating_system": {
+            "id": 0,
+            "name": "Android"
+          },
+          "min_operating_system_version": {
+            "id": 0,
+            "name": "4.4"
+          },
+          "max_operating_system_version": {
+            "id": 0,
+            "name": "6.0.1"
+          },
+          "browsers": [
+            {},
+            {
+              "id": 0,
+              "name": "Chrome"
+            }
+          ]
+        }
+      }
+    ],
+    "test_cases": [
+      {
+        "id": 0,
+        "title": "",
+        "feature_id": 0,
+        "target_idx": "",
+        "steps": [
+          {
+            "id": 0,
+            "description": "",
+            "test_case_id": 0,
+            "target_idx": ""
+          }
+        ]
+      }
+    ],
+    "test_environment": {
+      "id": 0,
+      "title": "Staging",
+      "url": "staging.example.com",
+      "username": "John",
+      "password": "qwerty",
+      "access": "Click on the login button",
+      "proxy": false,
+      "allow_orders": false
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "reject_reasons": [
+    {
+      "key": "known_bug",
+      "name": "Known bug",
+      "default_comment": "Rejected"
+    }
+  ]
+}
