@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import testio.model.WithId;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -20,4 +22,6 @@ public class Feature implements WithId {
   private String howtofind;
   @Json(name = "target_idx")
   private String targetIdx;
+  @Json(name = "user_stories")
+  private List<String> userStories;
 }

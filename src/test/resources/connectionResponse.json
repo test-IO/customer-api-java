@@ -1,0 +1,8 @@
+{
+  "connection": {
+    "id": 123,
+    "name": "name of the connection",
+    "url": "url of the connection",
+    "fixed": false
+  }
+}

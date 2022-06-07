@@ -1,23 +1,19 @@
 package testio;
 
 import com.squareup.moshi.Moshi;
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
-import lombok.AccessLevel;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
+import lombok.*;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import org.apache.commons.lang3.StringUtils;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
-import testio.client.BugsClient;
-import testio.client.TestsClient;
+import testio.client.*;
 import testio.internal.AuthInterceptor;
 import testio.internal.OffsetDateTimeAdapter;
+
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)
@@ -42,6 +38,27 @@ public class TestIoClientFactory {
 
   public TestsClient testsClient() {
     return retrofit.create(TestsClient.class);
+  }
+
+
+  public ConnectionsClient connectionClient() {
+    return retrofit.create(ConnectionsClient.class);
+  }
+
+  public UserStoriesClient userStoriesClient() {
+    return retrofit.create(UserStoriesClient.class);
+  }
+
+  public FeaturesClient featuresClient() {
+    return retrofit.create(FeaturesClient.class);
+  }
+
+  public TestCasesClient testCasesClient() {
+    return retrofit.create(TestCasesClient.class);
+  }
+
+  public TestEnvironmentsClient testEnvironmentsClient() {
+    return retrofit.create(TestEnvironmentsClient.class);
   }
 
   /**
