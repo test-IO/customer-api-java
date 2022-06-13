@@ -8,20 +8,17 @@ import testio.model.response.FeaturesResponse;
 
 public interface FeaturesClient {
 
-    @GET("products/{product_id}/features")
-    @Headers({
-            "Content-Type: application/json"
-    })
-    Call<FeaturesResponse> listFeatures(@Path("product_id") Long productId);
+  @GET("products/{product_id}/features")
+  @Headers({
+          "Content-Type: application/json"
+  })
+  Call<FeaturesResponse> listFeatures(@Path("product_id") Long productId);
 
-    @POST("products/{product_id}/features")
-    @Headers({
-            "Accept: application/json",
-            "Content-Type: application/json"
-    })
-    Call<FeatureResponse> createFeature(
-            @Path("product_id") Long productId,
-            @Body CreateFeatureRequest.RequestWrapper request
-    );
-
+  @POST("products/{product_id}/features")
+  @Headers({
+          "Accept: application/json",
+          "Content-Type: application/json"
+  })
+  Call<FeatureResponse> createFeature(
+      @Path("product_id") Long productId, @Body CreateFeatureRequest.RequestWrapper request);
 }

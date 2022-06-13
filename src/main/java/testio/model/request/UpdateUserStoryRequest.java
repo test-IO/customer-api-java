@@ -9,17 +9,17 @@ import lombok.*;
 @AllArgsConstructor
 public class UpdateUserStoryRequest {
 
-    private String path;
+  private String path;
 
-    public RequestWrapper buildRequest() {
-        return new RequestWrapper(this);
-    }
+  public RequestWrapper buildRequest() {
+    return new RequestWrapper(this);
+  }
 
-    @Value
-    @AllArgsConstructor(access = AccessLevel.PACKAGE)
-    public static class RequestWrapper {
+  @Value
+  @AllArgsConstructor(access = AccessLevel.PACKAGE)
+  public static class RequestWrapper {
 
-        @Json(name = "user_story")
-        UpdateUserStoryRequest createUserStoryRequest;
-    }
+    @Json(name = "user_story")
+    UpdateUserStoryRequest createUserStoryRequest;
+  }
 }

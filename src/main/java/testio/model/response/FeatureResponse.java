@@ -8,5 +8,5 @@ import testio.model.response.entity.Feature;
 @AllArgsConstructor
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class FeatureResponse {
-    Feature feature;
+  Feature feature;
 }

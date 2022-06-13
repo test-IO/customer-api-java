@@ -11,24 +11,26 @@ import java.util.List;
 @AllArgsConstructor
 public class CreateConnectionRequest {
 
-    private Long id;
-    private String name;
-    private String url;
-    private boolean fixed;
-    @Json(name = "product_ids")
-    private List<Long> productIds;
-    @Json(name = "section_ids")
-    private List<Long> sectionIds;
+  private Long id;
+  private String name;
+  private String url;
+  private boolean fixed;
 
-    public CreateConnectionRequest.RequestWrapper buildRequest() {
-        return new CreateConnectionRequest.RequestWrapper(this);
-    }
+  @Json(name = "product_ids")
+  private List<Long> productIds;
 
-    @Value
-    @AllArgsConstructor(access = AccessLevel.PACKAGE)
-    public static class RequestWrapper {
+  @Json(name = "section_ids")
+  private List<Long> sectionIds;
 
-        @Json(name = "connection")
-        CreateConnectionRequest createConnectionRequest;
-    }
+  public CreateConnectionRequest.RequestWrapper buildRequest() {
+    return new CreateConnectionRequest.RequestWrapper(this);
+  }
+
+  @Value
+  @AllArgsConstructor(access = AccessLevel.PACKAGE)
+  public static class RequestWrapper {
+
+    @Json(name = "connection")
+    CreateConnectionRequest createConnectionRequest;
+  }
 }

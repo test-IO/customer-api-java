@@ -9,19 +9,19 @@ import lombok.*;
 @AllArgsConstructor
 public class CreateFeatureRequest {
 
-    private String title;
-    private String description;
-    private String howtofind;
+  private String title;
+  private String description;
+  private String howtofind;
 
-    public RequestWrapper buildRequest() {
-        return new RequestWrapper(this);
-    }
+  public RequestWrapper buildRequest() {
+    return new RequestWrapper(this);
+  }
 
-    @Value
-    @AllArgsConstructor(access = AccessLevel.PACKAGE)
-    public static class RequestWrapper {
+  @Value
+  @AllArgsConstructor(access = AccessLevel.PACKAGE)
+  public static class RequestWrapper {
 
-        @Json(name = "feature")
-        CreateFeatureRequest createFeatureRequest;
-    }
+    @Json(name = "feature")
+    CreateFeatureRequest createFeatureRequest;
+  }
 }

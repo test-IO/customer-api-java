@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class UserStoriesResponse {
 
-    @Json(name = "user_stories")
-    List<UserStory> userStories;
+  @Json(name = "user_stories")
+  List<UserStory> userStories;
 }

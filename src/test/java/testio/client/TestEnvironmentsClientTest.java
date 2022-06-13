@@ -19,69 +19,74 @@ import static testio.client.examples.TestEnvironmentExample.*;
 
 public class TestEnvironmentsClientTest {
 
-    MockWebServer server;
-    TestEnvironmentsClient testEnvironmentsClient;
-    TestIoClientFactory factory;
+  MockWebServer server;
+  TestEnvironmentsClient testEnvironmentsClient;
+  TestIoClientFactory factory;
 
-    @BeforeEach
-    void setUp() throws IOException {
-        server = new MockWebServer();
-        server.start();
+  @BeforeEach
+  void setUp() throws IOException {
+    server = new MockWebServer();
+    server.start();
 
-        HttpUrl baseUrl = server.url("/v2/customer/");
+    HttpUrl baseUrl = server.url("/v2/customer/");
 
-        factory = new TestIoClientFactory.Builder()
-                .baseUrl(baseUrl.toString())
-                .token("abc")
-                .build();
-        testEnvironmentsClient = factory
-                .testEnvironmentsClient();
-    }
+    factory = new TestIoClientFactory.Builder().baseUrl(baseUrl.toString()).token("abc").build();
+    testEnvironmentsClient = factory.testEnvironmentsClient();
+  }
 
-    @AfterEach
-    void tearDown() throws Exception {
-        server.shutdown();
-    }
+  @AfterEach
+  void tearDown() throws Exception {
+    server.shutdown();
+  }
 
-    @Test
-    void verifyListTestEnvironments() throws Exception {
-        server.enqueue(new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentsResponse.json")));
+  @Test
+  void verifyListTestEnvironments() throws Exception {
+    server.enqueue(
+        new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentsResponse.json")));
 
-        TestEnvironmentsResponse response = testEnvironmentsClient.listTestEnvironments(1L).execute().body();
+    TestEnvironmentsResponse response =
+        testEnvironmentsClient.listTestEnvironments(1L).execute().body();
 
-        assertThat(response).isEqualTo(TEST_ENVIRONMENTS_RESPONSE);
+    assertThat(response).isEqualTo(TEST_ENVIRONMENTS_RESPONSE);
 
-        RecordedRequest recordedRequest = server.takeRequest();
-        assertThat(recordedRequest.getRequestLine()).isEqualTo("GET /v2/customer/products/1/test_environments HTTP/1.1");
-        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
-    }
+    RecordedRequest recordedRequest = server.takeRequest();
+    assertThat(recordedRequest.getRequestLine())
+        .isEqualTo("GET /v2/customer/products/1/test_environments HTTP/1.1");
+    assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
+  }
 
-    @Test
-    void verifyCreateTestEnvironments() throws Exception {
-        server.enqueue(new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentResponse.json")));
+  @Test
+  void verifyCreateTestEnvironments() throws Exception {
+    server.enqueue(
+        new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentResponse.json")));
 
-        TestEnvironmentResponse response = testEnvironmentsClient
-                .createTestEnvironment(1L, TEST_ENVIRONMENT_REQUEST.buildRequest())
-                .execute()
-                .body();
+    TestEnvironmentResponse response =
+        testEnvironmentsClient
+            .createTestEnvironment(1L, TEST_ENVIRONMENT_REQUEST.buildRequest())
+            .execute()
+            .body();
 
-        assertThat(response).isEqualTo(TEST_ENVIRONMENT_RESPONSE);
+    assertThat(response).isEqualTo(TEST_ENVIRONMENT_RESPONSE);
 
-        RecordedRequest recordedRequest = server.takeRequest();
-        assertThat(recordedRequest.getRequestLine()).isEqualTo("POST /v2/customer/products/1/test_environments HTTP/1.1");
-        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
-    }
+    RecordedRequest recordedRequest = server.takeRequest();
+    assertThat(recordedRequest.getRequestLine())
+        .isEqualTo("POST /v2/customer/products/1/test_environments HTTP/1.1");
+    assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
+  }
 
-    @Test
-    void verifyDeleteUserStory() throws Exception {
-        server.enqueue(new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentResponse.json")));
+  @Test
+  void verifyDeleteUserStory() throws Exception {
+    server.enqueue(
+        new MockResponse().setBody(OkioUtil.resourceToString("/testEnvironmentResponse.json")));
 
-        TestEnvironmentResponse response = testEnvironmentsClient.deleteTestEnvironment(1L, 37L).execute().body();
+    TestEnvironmentResponse response =
+        testEnvironmentsClient.deleteTestEnvironment(1L, 37L).execute().body();
 
-        assertThat(response).isEqualTo(TEST_ENVIRONMENT_RESPONSE);
+    assertThat(response).isEqualTo(TEST_ENVIRONMENT_RESPONSE);
 
-        RecordedRequest recordedRequest = server.takeRequest();
-        assertThat(recordedRequest.getRequestLine()).isEqualTo("DELETE /v2/customer/products/1/test_environments/37 HTTP/1.1");
-        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
-    }
+    RecordedRequest recordedRequest = server.takeRequest();
+    assertThat(recordedRequest.getRequestLine())
+        .isEqualTo("DELETE /v2/customer/products/1/test_environments/37 HTTP/1.1");
+    assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
+  }
 }

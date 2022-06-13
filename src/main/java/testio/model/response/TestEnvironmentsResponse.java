@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class TestEnvironmentsResponse {
 
-    @Json(name = "test_environments")
-    List<TestEnvironment>  testEnvironments;
+  @Json(name = "test_environments")
+  List<TestEnvironment> testEnvironments;
 }

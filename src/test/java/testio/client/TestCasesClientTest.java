@@ -19,43 +19,39 @@ import static testio.client.examples.TestCaseExample.BULK_TEST_CASE_REQUEST;
 
 public class TestCasesClientTest {
 
-    MockWebServer server;
-    TestCasesClient testCasesClient;
-    TestIoClientFactory factory;
+  MockWebServer server;
+  TestCasesClient testCasesClient;
+  TestIoClientFactory factory;
 
-    @BeforeEach
-    void setUp() throws IOException {
-        server = new MockWebServer();
-        server.start();
+  @BeforeEach
+  void setUp() throws IOException {
+    server = new MockWebServer();
+    server.start();
 
-        HttpUrl baseUrl = server.url("/v2/customer/");
+    HttpUrl baseUrl = server.url("/v2/customer/");
 
-        factory = new TestIoClientFactory.Builder()
-                .baseUrl(baseUrl.toString())
-                .token("abc")
-                .build();
-        testCasesClient = factory
-                .testCasesClient();
-    }
+    factory = new TestIoClientFactory.Builder().baseUrl(baseUrl.toString()).token("abc").build();
+    testCasesClient = factory.testCasesClient();
+  }
 
-    @AfterEach
-    void tearDown() throws Exception {
-        server.shutdown();
-    }
+  @AfterEach
+  void tearDown() throws Exception {
+    server.shutdown();
+  }
 
-    @Test
-    void verifyCreateUserStory() throws Exception {
-        server.enqueue(new MockResponse().setBody(OkioUtil.resourceToString("/testCasesResponse.json")));
+  @Test
+  void verifyCreateUserStory() throws Exception {
+    server.enqueue(
+        new MockResponse().setBody(OkioUtil.resourceToString("/testCasesResponse.json")));
 
-        TestCasesResponse response = testCasesClient
-                .createTestCases(1L, BULK_TEST_CASE_REQUEST)
-                .execute()
-                .body();
+    TestCasesResponse response =
+        testCasesClient.createTestCases(1L, BULK_TEST_CASE_REQUEST).execute().body();
 
-        assertThat(response).isEqualTo(TEST_CASES_RESPONSE);
+    assertThat(response).isEqualTo(TEST_CASES_RESPONSE);
 
-        RecordedRequest recordedRequest = server.takeRequest();
-        assertThat(recordedRequest.getRequestLine()).isEqualTo("POST /v2/customer/products/1/test_cases HTTP/1.1");
-        assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
-    }
+    RecordedRequest recordedRequest = server.takeRequest();
+    assertThat(recordedRequest.getRequestLine())
+        .isEqualTo("POST /v2/customer/products/1/test_cases HTTP/1.1");
+    assertThat(recordedRequest.getHeader("Authorization")).isEqualTo("Token abc");
+  }
 }

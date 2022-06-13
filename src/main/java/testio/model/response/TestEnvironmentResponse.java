@@ -10,6 +10,6 @@ import testio.model.response.entity.TestEnvironment;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class TestEnvironmentResponse {
 
-    @Json(name = "test_environment")
-    TestEnvironment testEnvironment;
+  @Json(name = "test_environment")
+  TestEnvironment testEnvironment;
 }

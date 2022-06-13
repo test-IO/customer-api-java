@@ -10,6 +10,6 @@ import testio.model.response.entity.UserStory;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class UserStoryResponse {
 
-    @Json(name = "user_story")
-    UserStory userStory;
+  @Json(name = "user_story")
+  UserStory userStory;
 }

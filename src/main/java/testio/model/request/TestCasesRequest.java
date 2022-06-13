@@ -11,7 +11,6 @@ import java.util.List;
 @AllArgsConstructor
 public class TestCasesRequest {
 
-    @Json(name = "test_cases")
-    List<TestCaseRequest> testCaseRequests;
-
+  @Json(name = "test_cases")
+  List<TestCaseRequest> testCaseRequests;
 }

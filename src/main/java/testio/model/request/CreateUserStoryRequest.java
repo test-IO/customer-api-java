@@ -9,19 +9,20 @@ import lombok.*;
 @AllArgsConstructor
 public class CreateUserStoryRequest {
 
-    private String path;
-    @Json(name = "feature_id")
-    private Long featureId;
+  private String path;
 
-    public RequestWrapper buildRequest() {
-        return new RequestWrapper(this);
-    }
+  @Json(name = "feature_id")
+  private Long featureId;
 
-    @Value
-    @AllArgsConstructor(access = AccessLevel.PACKAGE)
-    public static class RequestWrapper {
+  public RequestWrapper buildRequest() {
+    return new RequestWrapper(this);
+  }
 
-        @Json(name = "user_story")
-        CreateUserStoryRequest createUserStoryRequest;
-    }
+  @Value
+  @AllArgsConstructor(access = AccessLevel.PACKAGE)
+  public static class RequestWrapper {
+
+    @Json(name = "user_story")
+    CreateUserStoryRequest createUserStoryRequest;
+  }
 }

@@ -10,5 +10,5 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class FeaturesResponse {
-    List<Feature> features;
+  List<Feature> features;
 }

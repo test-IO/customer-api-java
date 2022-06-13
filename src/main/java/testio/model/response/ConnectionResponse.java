@@ -9,5 +9,5 @@ import testio.model.response.entity.Connection;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class ConnectionResponse {
 
-    Connection connection;
+  Connection connection;
 }

@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor(force = true, access = AccessLevel.PRIVATE)
 public class TestCasesResponse {
 
-    @Json(name = "test_cases")
-    List<TestCase> testCases;
+  @Json(name = "test_cases")
+  List<TestCase> testCases;
 }
