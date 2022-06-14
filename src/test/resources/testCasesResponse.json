@@ -1,0 +1,19 @@
+{
+  "test_cases": [
+    {
+      "id": 1,
+      "title": "New test case",
+      "requirements": null,
+      "feature_id": 1,
+      "target_idx": null,
+      "steps": [
+        {
+          "id": 1,
+          "description": "First step",
+          "test_case_id": 1,
+          "target_idx": null
+        }
+      ]
+    }
+  ]
+}

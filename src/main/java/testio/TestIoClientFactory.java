@@ -15,7 +15,12 @@ import org.apache.commons.lang3.StringUtils;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
 import testio.client.BugsClient;
+import testio.client.ConnectionsClient;
+import testio.client.FeaturesClient;
+import testio.client.TestCasesClient;
+import testio.client.TestEnvironmentsClient;
 import testio.client.TestsClient;
+import testio.client.UserStoriesClient;
 import testio.internal.AuthInterceptor;
 import testio.internal.OffsetDateTimeAdapter;
 
@@ -42,6 +47,27 @@ public class TestIoClientFactory {
 
   public TestsClient testsClient() {
     return retrofit.create(TestsClient.class);
+  }
+
+
+  public ConnectionsClient connectionClient() {
+    return retrofit.create(ConnectionsClient.class);
+  }
+
+  public UserStoriesClient userStoriesClient() {
+    return retrofit.create(UserStoriesClient.class);
+  }
+
+  public FeaturesClient featuresClient() {
+    return retrofit.create(FeaturesClient.class);
+  }
+
+  public TestCasesClient testCasesClient() {
+    return retrofit.create(TestCasesClient.class);
+  }
+
+  public TestEnvironmentsClient testEnvironmentsClient() {
+    return retrofit.create(TestEnvironmentsClient.class);
   }
 
   /**

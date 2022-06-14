@@ -1,0 +1,13 @@
+{
+  "features": [
+    {
+      "id": 1,
+      "title": "Account",
+      "description": "Manage your account information",
+      "howtofind": "Top right of the screen",
+      "user_stories": [
+        "user stories you want to test"
+      ]
+    }
+  ]
+}

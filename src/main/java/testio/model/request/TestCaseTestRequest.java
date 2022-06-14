@@ -19,18 +19,27 @@ public class TestCaseTestRequest {
 
   @Json(name = "test_title")
   private String testTitle;
+
   private String goal;
+
   @Json(name = "out_of_scope")
   private String outOfScope;
+
   private String instructions;
+
   @Json(name = "start_at")
   private OffsetDateTime startAt;
+
   private String duration;
+
   @Json(name = "report_language")
   private String reportLanguage;
+
   @Json(name = "test_cases")
   private List<Id> testCases;
+
   private List<Id> requirements;
+
   @Json(name = "test_environment")
   private Id testEnvironment;
 
