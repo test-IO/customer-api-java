@@ -11,10 +11,7 @@ import testio.model.response.TestCasesResponse;
 public interface TestCasesClient {
 
   @POST("products/{product_id}/test_cases")
-  @Headers({
-          "Accept: application/json",
-          "Content-type: application/json"
-  })
+  @Headers({"Accept: application/json", "Content-type: application/json"})
   Call<TestCasesResponse> createTestCases(
       @Path("product_id") Long productId, @Body TestCasesRequest request);
 }

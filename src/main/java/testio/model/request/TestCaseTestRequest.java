@@ -1,11 +1,15 @@
 package testio.model.request;
 
 import com.squareup.moshi.Json;
-import lombok.*;
-import testio.model.common.Id;
-
 import java.time.OffsetDateTime;
 import java.util.List;
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.Value;
+import testio.model.common.Id;
 
 @Data
 @Builder

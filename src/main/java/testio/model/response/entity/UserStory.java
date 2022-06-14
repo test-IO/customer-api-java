@@ -12,8 +12,7 @@ import testio.model.WithId;
 @AllArgsConstructor
 public class UserStory implements WithId {
 
-    private Long id;
-    private String path;
-    private String title;
-
+  private Long id;
+  private String path;
+  private String title;
 }

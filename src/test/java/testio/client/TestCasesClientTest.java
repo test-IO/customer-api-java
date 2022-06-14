@@ -1,5 +1,10 @@
 package testio.client;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static testio.client.examples.TestCaseExample.BULK_TEST_CASE_REQUEST;
+import static testio.client.examples.TestCaseExample.TEST_CASES_RESPONSE;
+
+import java.io.IOException;
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -10,12 +15,6 @@ import org.junit.jupiter.api.Test;
 import testio.TestIoClientFactory;
 import testio.model.response.TestCasesResponse;
 import testio.utils.OkioUtil;
-
-import java.io.IOException;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static testio.client.examples.TestCaseExample.TEST_CASES_RESPONSE;
-import static testio.client.examples.TestCaseExample.BULK_TEST_CASE_REQUEST;
 
 public class TestCasesClientTest {
 

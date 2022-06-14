@@ -1,19 +1,28 @@
 package testio;
 
 import com.squareup.moshi.Moshi;
-import lombok.*;
+import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import okhttp3.logging.HttpLoggingInterceptor.Level;
 import org.apache.commons.lang3.StringUtils;
 import retrofit2.Retrofit;
 import retrofit2.converter.moshi.MoshiConverterFactory;
-import testio.client.*;
+import testio.client.BugsClient;
+import testio.client.ConnectionsClient;
+import testio.client.FeaturesClient;
+import testio.client.TestCasesClient;
+import testio.client.TestEnvironmentsClient;
+import testio.client.TestsClient;
+import testio.client.UserStoriesClient;
 import testio.internal.AuthInterceptor;
 import testio.internal.OffsetDateTimeAdapter;
-
-import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 @Getter
 @RequiredArgsConstructor(access = AccessLevel.PACKAGE)

@@ -1,5 +1,11 @@
 package testio.client;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static testio.client.examples.TestEnvironmentExample.TEST_ENVIRONMENTS_RESPONSE;
+import static testio.client.examples.TestEnvironmentExample.TEST_ENVIRONMENT_REQUEST;
+import static testio.client.examples.TestEnvironmentExample.TEST_ENVIRONMENT_RESPONSE;
+
+import java.io.IOException;
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -11,11 +17,6 @@ import testio.TestIoClientFactory;
 import testio.model.response.TestEnvironmentResponse;
 import testio.model.response.TestEnvironmentsResponse;
 import testio.utils.OkioUtil;
-
-import java.io.IOException;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static testio.client.examples.TestEnvironmentExample.*;
 
 public class TestEnvironmentsClientTest {
 

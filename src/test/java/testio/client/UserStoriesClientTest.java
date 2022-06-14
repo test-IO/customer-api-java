@@ -1,5 +1,12 @@
 package testio.client;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static testio.client.examples.UserStoryExample.CREATE_USER_STORY_REQUEST;
+import static testio.client.examples.UserStoryExample.UPDATE_USER_STORY_REQUEST;
+import static testio.client.examples.UserStoryExample.USER_STORIES_RESPONSE;
+import static testio.client.examples.UserStoryExample.USER_STORY_RESPONSE;
+
+import java.io.IOException;
 import okhttp3.HttpUrl;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -11,11 +18,6 @@ import testio.TestIoClientFactory;
 import testio.model.response.UserStoriesResponse;
 import testio.model.response.UserStoryResponse;
 import testio.utils.OkioUtil;
-
-import java.io.IOException;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static testio.client.examples.UserStoryExample.*;
 
 public class UserStoriesClientTest {
 
